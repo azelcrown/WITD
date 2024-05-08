@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class BichitosScript : MonoBehaviour
 {
 
-    public AudioClip[] bichitosResponse;
+    public AudioClip bichitosResponse;
 
     private AudioSource bichitosAudioSource;
 
@@ -15,6 +16,10 @@ public class BichitosScript : MonoBehaviour
         bichitosAudioSource = GetComponent<AudioSource>();
     }
 
+    public void RespondToPlayerSound(){
+        
+        bichitosAudioSource.PlayOneShot(bichitosResponse);
+    }
     // Update is called once per frame
     void Update()
     {
