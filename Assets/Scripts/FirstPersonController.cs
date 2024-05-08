@@ -166,7 +166,7 @@ public class FirstPersonController : MonoBehaviour
             crosshairObject.gameObject.SetActive(false);
         }
 
-        #region Sprint Bar
+       /* #region Sprint Bar
 
         sprintBarCG = GetComponentInChildren<CanvasGroup>();
 
@@ -195,7 +195,7 @@ public class FirstPersonController : MonoBehaviour
             sprintBar.gameObject.SetActive(false);
         }
 
-        #endregion
+        #endregion*/
     }
 
     float camRotation;
@@ -300,7 +300,7 @@ public class FirstPersonController : MonoBehaviour
 
             // Handles sprint cooldown 
             // When sprint remaining == 0 stops sprint ability until hitting cooldown
-            if(isSprintCooldown)
+           /* if(isSprintCooldown)
             {
                 sprintCooldown -= 1 * Time.deltaTime;
                 if (sprintCooldown <= 0)
@@ -311,14 +311,14 @@ public class FirstPersonController : MonoBehaviour
             else
             {
                 sprintCooldown = sprintCooldownReset;
-            }
+            }*/
 
             // Handles sprintBar 
-            if(useSprintBar && !unlimitedSprint)
+            /*if(useSprintBar && !unlimitedSprint)
             {
                 float sprintRemainingPercent = sprintRemaining / sprintDuration;
                 sprintBar.transform.localScale = new Vector3(sprintRemainingPercent, 1f, 1f);
-            }
+            }*/
         }
 
         #endregion
@@ -409,7 +409,7 @@ public class FirstPersonController : MonoBehaviour
 
                     if (hideBarWhenFull && !unlimitedSprint)
                     {
-                        sprintBarCG.alpha += 5 * Time.deltaTime;
+                       // sprintBarCG.alpha += 5 * Time.deltaTime;
                     }
                 }
 
@@ -418,12 +418,12 @@ public class FirstPersonController : MonoBehaviour
             // All movement calculations while walking
             else
             {
-                isSprinting = false;
+               /* isSprinting = false;
 
                 if (hideBarWhenFull && sprintRemaining == sprintDuration)
                 {
-                    sprintBarCG.alpha -= 3 * Time.deltaTime;
-                }
+                   sprintBarCG.alpha -= 3 * Time.deltaTime;
+                }*/
 
                 targetVelocity = transform.TransformDirection(targetVelocity) * walkSpeed;
 

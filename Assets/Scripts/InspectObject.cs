@@ -22,13 +22,17 @@ public class InspectObject : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
-        {
+        { 
             RaycastHit RayHit;
 
             if (CameraToMouseRay(Input.mousePosition, out RayHit))
             {
-                if(RayHit.transform.gameObject.tag == "Inspectable")
-                _inspectObjectTransform = RayHit.transform;
+                Debug.Log ("cameratomouse");
+                if(RayHit.transform.gameObject.tag == "Inspectable"){
+                    _inspectObjectTransform = RayHit.transform;
+                    Debug.Log ("rayhit");
+                }
+                
             }
 
         }
