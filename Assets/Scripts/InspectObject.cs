@@ -39,9 +39,9 @@ public class InspectObject : MonoBehaviour
         if(Input.GetMouseButton(1) && _inspectObjectTransform)
         {
             _inspectObjectTransform.rotation = 
-            Quaternion.AngleAxis(deltaRotationX * rotateSpeed, transform.up) * //Rota eje X
-            Quaternion.AngleAxis(deltaRotationY * rotateSpeed, transform.right) * //Rota eje Y
-            _inspectObjectTransform.rotation; //Tiene en cuenta la rotación existente
+                Quaternion.AngleAxis(deltaRotationX * rotateSpeed, transform.up) * //Rota eje X
+                Quaternion.AngleAxis(deltaRotationY * rotateSpeed, transform.right) * //Rota eje Y
+                _inspectObjectTransform.rotation; //Tiene en cuenta la rotación existente
 
         }
     }
