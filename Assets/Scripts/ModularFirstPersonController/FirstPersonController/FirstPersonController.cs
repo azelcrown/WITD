@@ -8,11 +8,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Runtime.CompilerServices;
-
 
 #if UNITY_EDITOR
-using UnityEditor;
+    using UnityEditor;
     using System.Net;
 #endif
 
@@ -53,13 +51,6 @@ public class FirstPersonController : MonoBehaviour
     private bool isZoomed = false;
 
     #endregion
-    
-    #region Call Variables
-
-    public AudioClip playerCall;
-    public float triggerRadius = 5f;
-    public AudioSource _audioSource;
-
     #endregion
 
     #region Movement Variables
@@ -139,7 +130,6 @@ public class FirstPersonController : MonoBehaviour
     private float timer = 0;
 
     #endregion
-    #endregion
 
     private void Awake()
     {
@@ -176,7 +166,7 @@ public class FirstPersonController : MonoBehaviour
             crosshairObject.gameObject.SetActive(false);
         }
 
-       /* #region Sprint Bar
+        #region Sprint Bar
 
         sprintBarCG = GetComponentInChildren<CanvasGroup>();
 
@@ -205,28 +195,13 @@ public class FirstPersonController : MonoBehaviour
             sprintBar.gameObject.SetActive(false);
         }
 
-        #endregion*/
+        #endregion
     }
 
     float camRotation;
-    public void SonarClipUnaVez(AudioClip ac){
-        _audioSource.PlayOneShot(ac);
-    }
+
     private void Update()
-
     {
-
-
-     #region Call
-       
-        if(Input.GetKeyDown(KeyCode.Space)){
-            //Hacer llamada
-            _audioSource.PlayOneShot(playerCall);
-
-     
-
-        #endregion
-
         #region Camera
 
         // Control camera movement
@@ -325,7 +300,7 @@ public class FirstPersonController : MonoBehaviour
 
             // Handles sprint cooldown 
             // When sprint remaining == 0 stops sprint ability until hitting cooldown
-           /* if(isSprintCooldown)
+            if(isSprintCooldown)
             {
                 sprintCooldown -= 1 * Time.deltaTime;
                 if (sprintCooldown <= 0)
@@ -336,14 +311,14 @@ public class FirstPersonController : MonoBehaviour
             else
             {
                 sprintCooldown = sprintCooldownReset;
-            }*/
+            }
 
             // Handles sprintBar 
-            /*if(useSprintBar && !unlimitedSprint)
+            if(useSprintBar && !unlimitedSprint)
             {
                 float sprintRemainingPercent = sprintRemaining / sprintDuration;
                 sprintBar.transform.localScale = new Vector3(sprintRemainingPercent, 1f, 1f);
-            }*/
+            }
         }
 
         #endregion
@@ -386,23 +361,6 @@ public class FirstPersonController : MonoBehaviour
         if(enableHeadBob)
         {
             HeadBob();
-        }
-    }
-
-    void OnTriggerEnter(Collider col){
-
-        Debug.Log(col.gameObject);
-
-       BichitosScript bichitos = col.GetComponent<BichitosScript>();
-        if(bichitos !=null && _audioSource.isPlaying == true && col.gameObject.tag == "Bicho"){
-            bichitos.EnteredPlayerTrigger();
-        }
-    }
-      void OnTriggerExit(Collider col){
-
-       BichitosScript bichitos = col.GetComponent<BichitosScript>();
-        if(bichitos !=null){
-            bichitos.ExitedPlayerTrigger();
         }
     }
 
@@ -451,7 +409,7 @@ public class FirstPersonController : MonoBehaviour
 
                     if (hideBarWhenFull && !unlimitedSprint)
                     {
-                       // sprintBarCG.alpha += 5 * Time.deltaTime;
+                        sprintBarCG.alpha += 5 * Time.deltaTime;
                     }
                 }
 
@@ -460,12 +418,12 @@ public class FirstPersonController : MonoBehaviour
             // All movement calculations while walking
             else
             {
-               /* isSprinting = false;
+                isSprinting = false;
 
                 if (hideBarWhenFull && sprintRemaining == sprintDuration)
                 {
-                   sprintBarCG.alpha -= 3 * Time.deltaTime;
-                }*/
+                    sprintBarCG.alpha -= 3 * Time.deltaTime;
+                }
 
                 targetVelocity = transform.TransformDirection(targetVelocity) * walkSpeed;
 
@@ -483,9 +441,8 @@ public class FirstPersonController : MonoBehaviour
         #endregion
     }
 
-    #region Grounded
     // Sets isGrounded based on a raycast sent straigth down from the player object
-     void CheckGround()
+    private void CheckGround()
     {
         Vector3 origin = new Vector3(transform.position.x, transform.position.y - (transform.localScale.y * .5f), transform.position.z);
         Vector3 direction = transform.TransformDirection(Vector3.down);
@@ -501,11 +458,8 @@ public class FirstPersonController : MonoBehaviour
             isGrounded = false;
         }
     }
-    #endregion
 
-    #region Jump 
-
-    void Jump()
+    private void Jump()
     {
         // Adds force to the player rigidbody to jump
         if (isGrounded)
@@ -521,7 +475,7 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
-    void Crouch()
+    private void Crouch()
     {
         // Stands player up to full height
         // Brings walkSpeed back up to original speed
@@ -543,7 +497,7 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
-    void HeadBob()
+    private void HeadBob()
     {
         if(isWalking)
         {
@@ -573,8 +527,6 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 }
-
-#endregion
 
 
 
@@ -725,7 +677,6 @@ public class FirstPersonController : MonoBehaviour
         EditorGUILayout.Space();
 
         #endregion
-        #endregion
 
         #region Jump
 
@@ -757,6 +708,8 @@ public class FirstPersonController : MonoBehaviour
 
         #endregion
 
+        #endregion
+
         #region Head Bob
 
         EditorGUILayout.Space();
@@ -784,5 +737,6 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
-}}
+}
+
 #endif
