@@ -8,9 +8,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Runtime.CompilerServices;
+
 
 #if UNITY_EDITOR
-    using UnityEditor;
+using UnityEditor;
     using System.Net;
 #endif
 
@@ -51,6 +53,13 @@ public class FirstPersonController : MonoBehaviour
     private bool isZoomed = false;
 
     #endregion
+    
+    #region Call Variables
+
+    public AudioClip playerCall;
+    public float triggerRadius = 5f;
+    public AudioSource _audioSource;
+
     #endregion
 
     #region Movement Variables
@@ -130,6 +139,7 @@ public class FirstPersonController : MonoBehaviour
     private float timer = 0;
 
     #endregion
+    #endregion
 
     private void Awake()
     {
@@ -199,9 +209,24 @@ public class FirstPersonController : MonoBehaviour
     }
 
     float camRotation;
-
+    public void SonarClipUnaVez(AudioClip ac){
+        _audioSource.PlayOneShot(ac);
+    }
     private void Update()
+
     {
+
+
+     #region Call
+       
+        if(Input.GetKeyDown(KeyCode.Space)){
+            //Hacer llamada
+            _audioSource.PlayOneShot(playerCall);
+
+     
+
+        #endregion
+
         #region Camera
 
         // Control camera movement
@@ -364,6 +389,23 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter(Collider col){
+
+        Debug.Log(col.gameObject);
+
+       BichitosScript bichitos = col.GetComponent<BichitosScript>();
+        if(bichitos !=null && _audioSource.isPlaying == true && col.gameObject.tag == "Bicho"){
+            bichitos.EnteredPlayerTrigger();
+        }
+    }
+      void OnTriggerExit(Collider col){
+
+       BichitosScript bichitos = col.GetComponent<BichitosScript>();
+        if(bichitos !=null){
+            bichitos.ExitedPlayerTrigger();
+        }
+    }
+
     void FixedUpdate()
     {
         #region Movement
@@ -441,8 +483,9 @@ public class FirstPersonController : MonoBehaviour
         #endregion
     }
 
+    #region Grounded
     // Sets isGrounded based on a raycast sent straigth down from the player object
-    private void CheckGround()
+     void CheckGround()
     {
         Vector3 origin = new Vector3(transform.position.x, transform.position.y - (transform.localScale.y * .5f), transform.position.z);
         Vector3 direction = transform.TransformDirection(Vector3.down);
@@ -458,8 +501,11 @@ public class FirstPersonController : MonoBehaviour
             isGrounded = false;
         }
     }
+    #endregion
 
-    private void Jump()
+    #region Jump 
+
+    void Jump()
     {
         // Adds force to the player rigidbody to jump
         if (isGrounded)
@@ -475,7 +521,7 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
-    private void Crouch()
+    void Crouch()
     {
         // Stands player up to full height
         // Brings walkSpeed back up to original speed
@@ -497,7 +543,7 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
-    private void HeadBob()
+    void HeadBob()
     {
         if(isWalking)
         {
@@ -527,6 +573,8 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 }
+
+#endregion
 
 
 
@@ -677,6 +725,7 @@ public class FirstPersonController : MonoBehaviour
         EditorGUILayout.Space();
 
         #endregion
+        #endregion
 
         #region Jump
 
@@ -708,8 +757,6 @@ public class FirstPersonController : MonoBehaviour
 
         #endregion
 
-        #endregion
-
         #region Head Bob
 
         EditorGUILayout.Space();
@@ -737,6 +784,5 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
-}
-
+}}
 #endif
