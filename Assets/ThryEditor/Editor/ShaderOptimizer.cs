@@ -85,9 +85,9 @@ namespace Thry
         // this hard-coded material property will uncomment //#pragma multi_compile _ LOD_FADE_CROSSFADE in optimized .shader files
         public static readonly string LODCrossFadePropertyName = "_LODCrossfade";
 
-        // IgnoreProjector and ForceNoShadowCasting don't work as override tags, so material properties by these names
-        // will determine whether or not //"IgnoreProjector"="True" etc. will be uncommented in optimized .shader files
-        public static readonly string IgnoreProjectorPropertyName = "_IgnoreProjector";
+        // IgnoreProbjector and ForceNoShadowCasting don't work as override tags, so material properties by these names
+        // will determine whether or not //"IgnoreProbjector"="True" etc. will be uncommented in optimized .shader files
+        public static readonly string IgnoreProbjectorPropertyName = "_IgnoreProbjector";
         public static readonly string ForceNoShadowCastingPropertyName = "_ForceNoShadowCasting";
 
         // Material property suffix that controls whether the property of the same name gets baked into the optimized shader
@@ -656,11 +656,11 @@ namespace Thry
                             if (crossfadeProp != null && crossfadeProp.floatValue == 1)
                                 psf.lines[i] = psf.lines[i].Replace("//#pragma", "#pragma");
                         }
-                        else if (trimmedLine.StartsWith("//\"IgnoreProjector\"=\"True\"", StringComparison.Ordinal))
+                        else if (trimmedLine.StartsWith("//\"IgnoreProbjector\"=\"True\"", StringComparison.Ordinal))
                         {
-                            MaterialProperty projProp = Array.Find(props, x => x.name == IgnoreProjectorPropertyName);
+                            MaterialProperty projProp = Array.Find(props, x => x.name == IgnoreProbjectorPropertyName);
                             if (projProp != null && projProp.floatValue == 1)
-                                psf.lines[i] = psf.lines[i].Replace("//\"IgnoreProjector", "\"IgnoreProjector");
+                                psf.lines[i] = psf.lines[i].Replace("//\"IgnoreProbjector", "\"IgnoreProbjector");
                         }
                         else if (trimmedLine.StartsWith("//\"ForceNoShadowCasting\"=\"True\"", StringComparison.Ordinal))
                         {

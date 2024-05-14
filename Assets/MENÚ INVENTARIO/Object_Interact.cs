@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 using Cursor = UnityEngine.Cursor;
 
 public class Object_Interact : MonoBehaviour
 {
     public GameObject offset;
-    private PlayerInput _playerInput;
+    //private PlayerInput _playerInput;
     GameObject targetObject;
 
     public bool isExamining = false;
@@ -34,7 +34,7 @@ public class Object_Interact : MonoBehaviour
     {
         _canva.enabled = false;
         targetObject = GameObject.Find("PlayerCapsule");
-        _playerInput = targetObject.GetComponent<PlayerInput>();
+        //_playerInput = targetObject.GetComponent<PlayerInput>();
     }
 
     void Update()
@@ -108,7 +108,7 @@ public class Object_Interact : MonoBehaviour
         lastMousePosition = Input.mousePosition;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        _playerInput.enabled = false;
+       // _playerInput.enabled = false;
     }
 
     //This method is called when the player stops examining an object. It locks the cursor again,
@@ -118,7 +118,7 @@ public class Object_Interact : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
        Cursor.visible = false;
-        _playerInput.enabled = true;
+        //_playerInput.enabled = true;
     }
 
    

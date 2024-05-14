@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4773692906171421583}
   m_Layer: 0
   m_Name: bicho prueba
-  m_TagString: Untagged
+  m_TagString: Bicho
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 6820800536655376065}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 2.08, y: 4.16, z: 4.16}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -238,4 +238,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aa580fbcd1f8344781bb2418317266b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bichitosResponse: []
+  bichitosResponse: {fileID: 0}
