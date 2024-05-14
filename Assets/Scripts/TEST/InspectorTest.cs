@@ -49,7 +49,7 @@ public class InspectorTest : MonoBehaviour
                 inspectedObject.GetComponent<Collider>().isTrigger = false;
 
 
-                fpc.cameraCanMove = true;
+                //fpc.cameraCanMove = true;
                 modeInspector = false;
 
                 Debug.Log("vuelta");
@@ -60,13 +60,22 @@ public class InspectorTest : MonoBehaviour
 
             //MODO NORMAL
             if ( Input.GetMouseButtonDown (0)){ 
-                Debug.Log("asdfasdf");
-                if ( Physics.Raycast (cameraTransform.position, cameraTransform.forward,out hit, 100.0f)) {
+
+
+                Ray ray = Camera.main.ScreenPointToRay( Input.mousePosition );
+		        RaycastHit hit;
+
+                //rayo desde la cámara
+                // if ( Physics.Raycast (cameraTransform.position, cameraTransform.forward,out hit, 100.0f)) {
+
+                //rayo desde el click
+                if ( Physics.Raycast ( ray, out hit, 100f)) {
+
                     Debug.DrawRay(cameraTransform.position, cameraTransform.forward * 100.0f, Color.blue);
                     
                     if(hit.transform.tag == "Inspectable"){
                         
-                        fpc.cameraCanMove = false;
+                        //fpc.cameraCanMove = false;
                         modeInspector = true;
                         inspectedObject = hit.collider.gameObject;
                         inspectedObject.GetComponent<Collider>().isTrigger = true;
