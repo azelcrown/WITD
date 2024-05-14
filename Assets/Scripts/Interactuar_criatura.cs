@@ -2,18 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interactuar_criatura : MonoBehaviour
+public class ApuntarObjeto : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-         
-    }
+    public Transform objetivo; // El objeto al que quieres apuntar
 
-    // Update is called once per frame
     void Update()
     {
-        
+        Vector3 direccion = objetivo.position - transform.position;
+        Quaternion rotacion = Quaternion.LookRotation(direccion);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotacion, Time.deltaTime);
     }
 }
-
