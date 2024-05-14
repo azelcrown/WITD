@@ -28,7 +28,10 @@ public class Inventory : MonoBehaviour
         if (items.Count < space)
         {
             items.Add(item);
-            Debug.Log(Sphere + " fue agregado al inventario.");
+
+           /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+           Debug.Log(Sphere + " fue agregado al inventario.");  
+           */
         }
         else
         {
@@ -40,7 +43,10 @@ public class Inventory : MonoBehaviour
     public void Remove(Item item)
     {
         items.Remove(item);
+        
+        /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         Debug.Log(Sphere + " fue eliminado del inventario.");
+        */
     }
 }
 
