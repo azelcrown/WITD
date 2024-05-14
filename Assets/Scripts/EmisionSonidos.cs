@@ -6,8 +6,10 @@ using UnityEngine;
 public class EmisionSonidos : MonoBehaviour
 {
 
-public AudioClip playerCall;
-private AudioSource playerAudioSource;
+    public AudioClip playerCall;
+    private AudioSource playerAudioSource;
+
+    private bool llamadaHecha = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,25 +25,40 @@ private AudioSource playerAudioSource;
         }
     }
 
-    void OnTriggerEnter(Collider col){
+    void OnTriggerStay(Collider col){
 
-        BichitosScript bichitos = col.GetComponent<BichitosScript>();
+        Debug.Log(playerAudioSource.isPlaying);
 
         if(col.gameObject.CompareTag("Bicho") && playerAudioSource.isPlaying){
-            bichitos.EnteredPlayerTrigger();
+           
+            
+            if(llamadaHecha == false){
+                StartCoroutine(Respuesta(col));
+                llamadaHecha = true;
+            }
             Debug.Log("Gritan los bichoss");
         }
     } 
 
     void OnTriggerExit(Collider col){
 
-         BichitosScript bichitos = col.GetComponent<BichitosScript>();
-
         if(col.gameObject.CompareTag("Bicho"))
-        {
+        {   BichitosScript bichitos = col.GetComponent<BichitosScript>();
              bichitos.ExitedPlayerTrigger();
             Debug.Log("No Gritan los bichoss");
         }
     } 
+
+
+    IEnumerator Respuesta(Collider col){
+
+        yield return new WaitForSeconds(1.5f);
+        BichitosScript bichitos = col.GetComponent<BichitosScript>();
+        bichitos.EnteredPlayerTrigger();
+        yield return new WaitForSeconds(3f);
+        llamadaHecha = false;
+        Debug.Log("Puedo pulsar otra vez");
+
+    }
 }
 

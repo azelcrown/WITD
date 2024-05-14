@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class BichitosScript : MonoBehaviour
 {
-    GameObject fps;
-    Vector3 posicionInicial;
+    GameObject fpc;
     public AudioClip bichitosResponse;
 
     private AudioSource _audioSource;
@@ -14,14 +13,14 @@ public class BichitosScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
-        fps = GameObject.Find("FirstPersonController");
-        posicionInicial = transform.position;
+        fpc = GameObject.Find("FirstPersonController");
         _audioSource = GetComponent<AudioSource>();
     }
 
     
     public void EnteredPlayerTrigger(){
         _audioSource.PlayOneShot(bichitosResponse);
+        
     }
 
     public void ExitedPlayerTrigger(){
@@ -32,7 +31,9 @@ public class BichitosScript : MonoBehaviour
 
     void Update()
     {
-    
+
+       
+        
     }
 
   
