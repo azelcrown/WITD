@@ -79,11 +79,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Primary:
-        m_Texture: {fileID: 11700000, guid: 763883e105b7ed04c99a51ed8510d376, type: 2}
+        m_Texture: {fileID: 11700000, guid: befad4f18f1057545b42278157002544, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Secondary:
-        m_Texture: {fileID: 11700000, guid: a88eda01d89db2a49afdd8af3e9c32c2, type: 2}
+        m_Texture: {fileID: 11700000, guid: 1c7f565a4e7d6fb4083946aec28f3052, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
