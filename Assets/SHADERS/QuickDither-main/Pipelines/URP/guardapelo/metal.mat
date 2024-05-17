@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: feto (material)
+  m_Name: metal
   m_Shader: {fileID: -6465566751694194690, guid: 0c55d04c7902ca54880e6baf90042d5e,
     type: 3}
   m_ValidKeywords: []
@@ -46,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: b207c1e118a7c2d419c2504128940cb1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 96b7c49b5b8f68c48b359fe5d4eea8a6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -124,7 +124,7 @@ Material:
     - _Remap: {r: 0, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &5609498376462795457
+--- !u!114 &8000873535762934834
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
