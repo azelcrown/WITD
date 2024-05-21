@@ -10,7 +10,7 @@ public class InspectorTest : MonoBehaviour
     public float mouseSpeed = 10f;
     public float distanciaObjeto = 15f;
     #endregion
-    RaycastHit hit;
+    RaycastHit hit;+
     Transform cameraTransform;
 
 
