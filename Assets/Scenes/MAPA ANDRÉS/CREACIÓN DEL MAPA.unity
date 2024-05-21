@@ -3365,7 +3365,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.07169801, g: 0.07169801, b: 0.07169801, a: 1}
-  m_Intensity: 1913.5
+  m_Intensity: 192.45
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -4444,8 +4444,6 @@ MonoBehaviour:
   targetObjects:
   - {fileID: 1477506508}
   - {fileID: 858924568}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!23 &2072533307
 MeshRenderer:
   m_ObjectHideFlags: 0
