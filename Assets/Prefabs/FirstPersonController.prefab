@@ -202,10 +202,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3890232081648663975}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea0c73f7e6363f54d9fc4e8e2c119820, type: 3}
+  m_Script: {fileID: 11500000, guid: d90ba6530d9bfda47abb4610956b2f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 3890232083037951795}
+  playerCamera: {fileID: 0}
   fov: 60
   invertCamera: 0
   cameraCanMove: 1
@@ -220,9 +220,6 @@ MonoBehaviour:
   zoomKey: 324
   zoomFOV: 30
   zoomStepTime: 5
-  playerCall: {fileID: 0}
-  triggerRadius: 5
-  _audioSource: {fileID: 0}
   playerCanMove: 1
   walkSpeed: 5
   maxVelocityChange: 10
@@ -249,7 +246,7 @@ MonoBehaviour:
   crouchHeight: 0.75
   speedReduction: 0.5
   enableHeadBob: 1
-  joint: {fileID: 3890232082977546673}
+  joint: {fileID: 0}
   bobSpeed: 10
   bobAmount: {x: 0.15, y: 0.05, z: 0}
 --- !u!1 &3890232082934446005

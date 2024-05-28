@@ -408,6 +408,12 @@ Transform:
   m_Father: {fileID: 864679255}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &783781162 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3890232082977546673, guid: a9ec079f2ed9f7c43a64badafa9713e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 583354708787029341}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &864679253
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,6 +718,12 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!20 &1328587835 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3890232083037951795, guid: a9ec079f2ed9f7c43a64badafa9713e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 583354708787029341}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1334079107
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,6 +895,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d343f7f997df3904d8f173bc372a6c33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1750188652 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3890232081648663975, guid: a9ec079f2ed9f7c43a64badafa9713e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 583354708787029341}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1750188659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750188652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d90ba6530d9bfda47abb4610956b2f44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 1328587835}
+  fov: 60
+  invertCamera: 0
+  cameraCanMove: 1
+  mouseSensitivity: 2
+  maxLookAngle: 50
+  lockCursor: 1
+  crosshair: 1
+  crosshairImage: {fileID: 0}
+  crosshairColor: {r: 1, g: 1, b: 1, a: 1}
+  enableZoom: 1
+  holdToZoom: 0
+  zoomKey: 324
+  zoomFOV: 30
+  zoomStepTime: 5
+  playerCanMove: 1
+  walkSpeed: 5
+  maxVelocityChange: 10
+  enableSprint: 1
+  unlimitedSprint: 0
+  sprintKey: 304
+  sprintSpeed: 7
+  sprintDuration: 5
+  sprintCooldown: 0.5
+  sprintFOV: 80
+  sprintFOVStepTime: 10
+  useSprintBar: 1
+  hideBarWhenFull: 1
+  sprintBarBG: {fileID: 0}
+  sprintBar: {fileID: 0}
+  sprintBarWidthPercent: 0.3
+  sprintBarHeightPercent: 0.015
+  enableJump: 1
+  jumpKey: 32
+  jumpPower: 5
+  enableCrouch: 1
+  holdToCrouch: 1
+  crouchKey: 306
+  crouchHeight: 0.75
+  speedReduction: 0.5
+  enableHeadBob: 1
+  joint: {fileID: 783781162}
+  bobSpeed: 10
+  bobAmount: {x: 0.15, y: 0.05, z: 0}
 --- !u!1 &1762507007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,5 +1151,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3890232081648663981, guid: a9ec079f2ed9f7c43a64badafa9713e6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a9ec079f2ed9f7c43a64badafa9713e6, type: 3}
