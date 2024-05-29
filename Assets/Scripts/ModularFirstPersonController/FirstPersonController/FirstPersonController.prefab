@@ -187,6 +187,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCall: {fileID: 0}
+  playerTransform: {fileID: 0}
+  maxDistance: 25
 --- !u!1 &4459864850190357393
 GameObject:
   m_ObjectHideFlags: 0
