@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class SceneChanger : MonoBehaviour
+public class SceneChanger2 : MonoBehaviour
 {
     // Nombre de la escena a la que deseas cambiar
     public string INSPECTINVENTARIO = "";
