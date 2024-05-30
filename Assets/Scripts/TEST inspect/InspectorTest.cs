@@ -18,7 +18,7 @@ public class InspectorTest : MonoBehaviour
     FirstPersonController fpc;
     GameObject fpcObject;
     GameObject inspectedObject;
-    Transform originalTranform = null;
+    //Transform originalTranform = null;
     Vector3 originalPosition;
     Quaternion originalRotation;
 

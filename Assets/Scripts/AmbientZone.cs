@@ -8,9 +8,9 @@ namespace Cinemachine
 {
     public class AmbientZone : MonoBehaviour
     {
-        [Tooltip("Cinemachine Path to follow")]
+        
         public CinemachinePathBase m_Path;
-        [Tooltip("Character to track")]
+        
         public GameObject Player;
 
         float m_Position;       // The position along the path to set the cart to in path units
@@ -18,12 +18,11 @@ namespace Cinemachine
 
         void Update()
         {   
-            // Find closest point to the player along the path
             SetCartPosition(m_Path.FindClosestPoint(Player.transform.position, 0, -1, 10));
-            // Define vectors for the dot product
+           
             Vector3 Sub = transform.position - Player.transform.position;
             Vector3 Spline = transform.right;
-            // Attach object to player on enter
+            
             if(Vector3.Dot(Sub, Spline) > 0)
             {
                 transform.position = Player.transform.position;
@@ -31,7 +30,7 @@ namespace Cinemachine
             }   
         }
 
-        // Set cart's position to closest point
+        
         void SetCartPosition(float distanceAlongPath)
         {
             m_Position = m_Path.StandardizeUnit(distanceAlongPath, m_PositionUnits);
