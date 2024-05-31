@@ -35,7 +35,7 @@ public class EmisionSonidos : MonoBehaviour
 
     void OnTriggerStay(Collider col){
 
-        Debug.Log(playerAudioSource.isPlaying);
+        //Debug.Log(playerAudioSource.isPlaying);
 
         if(col.gameObject.CompareTag("Bicho") && playerAudioSource.isPlaying){
            

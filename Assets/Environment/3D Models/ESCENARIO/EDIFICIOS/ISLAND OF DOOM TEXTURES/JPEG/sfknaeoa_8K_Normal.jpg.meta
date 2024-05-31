@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: fac002a755d79d5478484434103ddc28
+=======
+guid: c66987b0d69888341891793bbc4fdf17
+>>>>>>> 9cbf85ad01ea7bddc4c3284c949c7b8937875179
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -54,7 +58,11 @@ TextureImporter:
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
   textureType: 1
+<<<<<<< HEAD
   textureShape: 1
+=======
+  textureShape: 2
+>>>>>>> 9cbf85ad01ea7bddc4c3284c949c7b8937875179
   singleChannelComponent: 0
   flipbookRows: 1
   flipbookColumns: 1
@@ -62,8 +70,13 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
+<<<<<<< HEAD
   applyGammaDecoding: 0
   cookieLightType: 0
+=======
+  applyGammaDecoding: 1
+  cookieLightType: 2
+>>>>>>> 9cbf85ad01ea7bddc4c3284c949c7b8937875179
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform

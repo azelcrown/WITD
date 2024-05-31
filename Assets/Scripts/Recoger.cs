@@ -52,7 +52,7 @@ public class Inventory : MonoBehaviour
 
 public class Item : MonoBehaviour
 {
-    public string name = "Sphere"; // Nombre del ítem
+    // Esto da error:      public string name = "Sphere"; // Nombre del ítem
     public Sprite icon = null; // Icono del ítem
     public bool isDefaultItem = false; // Si es un ítem predeterminado al inicio del juego
 
