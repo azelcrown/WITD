@@ -15,11 +15,15 @@ public class PointAtObject : MonoBehaviour
         // Busca el objeto más cercano
         foreach (Transform target in targetObjects)
         {
-            float distanceToTarget = Vector3.Distance(transform.position, target.position);
-            if (distanceToTarget < closestDistance)
+            // Verifica si el objeto objetivo es nulo antes de intentar acceder a su posición
+            if (target != null)
             {
-                closestDistance = distanceToTarget;
-                closestTarget = target;
+                float distanceToTarget = Vector3.Distance(transform.position, target.position);
+                if (distanceToTarget < closestDistance)
+                {
+                    closestDistance = distanceToTarget;
+                    closestTarget = target;
+                }
             }
         }
 
