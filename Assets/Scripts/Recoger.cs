@@ -12,6 +12,7 @@ public class Recoger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log ("(if this.gameObject.name == carta");
             if (this.gameObject.name == "carta")
             {
                 GameManager.Instance.tengo_carta=true;
@@ -46,7 +47,7 @@ public class Recoger : MonoBehaviour
         }
     }
 }
-
+/* CORRECCIÓN POR QUE NO NECESITAN SER ELIMINADOS LOS OBJETOS
 public class Inventory : MonoBehaviour
 {
     public int space = 10; // Espacio máximo del inventario
@@ -59,9 +60,7 @@ public class Inventory : MonoBehaviour
         {
             items.Add(item);
 
-           /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-           Debug.Log(Sphere + " fue agregado al inventario.");  
-           */
+           Debug.Log(item.name + " fue agregado al inventario.");
         }
         else
         {
@@ -74,9 +73,7 @@ public class Inventory : MonoBehaviour
     {
         items.Remove(item);
         
-        /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        Debug.Log(Sphere + " fue eliminado del inventario.");
-        */
+       Debug.Log(item.name + " fue eliminado del inventario.");
     }
 }
 
@@ -93,4 +90,4 @@ public class Item : MonoBehaviour
         // Ejemplo: Debug.Log("Usando " + name);
     }
 
-}
+}*/
