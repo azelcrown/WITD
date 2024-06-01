@@ -43,6 +43,13 @@ public class Recoger : MonoBehaviour
                 GameManager.Instance.tengo_abrecartas=true;
             }
             
+            // Desactivar el AudioSource antes de destruir el GameObject
+            AudioSource audioSource = this.gameObject.GetComponent<AudioSource>();
+            if (audioSource != null)
+            {
+                audioSource.enabled = false;
+            }
+            
             Destroy(gameObject);
         }
     }
