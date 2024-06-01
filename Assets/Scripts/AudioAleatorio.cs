@@ -18,8 +18,8 @@ public class AudioAleatorio : MonoBehaviour
     {
         while (true)
         {
-            // Esperar un tiempo aleatorio entre 10 y 60 segundos
-            float tiempoEspera = Random.Range(1f, 120f);
+            // Esperar un tiempo aleatorio entre 10 y 120 segundos
+            float tiempoEspera = Random.Range(15f, 120f);
             yield return new WaitForSeconds(tiempoEspera);
 
             // Iniciar la transición de volumen de entrada

@@ -1,11 +1,15 @@
-using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class Recoger : MonoBehaviour
+public class RecogerQuitarsonido : MonoBehaviour
 {
+    private AudioSource audioSource;
+
     void Start()
     {
-        
+        // Obtén el componente AudioSource del GameObject
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -41,6 +45,12 @@ public class Recoger : MonoBehaviour
             if (this.gameObject.name == "abrecartas")
             {
                 GameManager.Instance.tengo_abrecartas=true;
+            }
+
+            // Desactiva el AudioSource al recoger el objeto
+            if (audioSource != null)
+            {
+                audioSource.enabled = false;
             }
             
             Destroy(gameObject);
