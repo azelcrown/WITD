@@ -11,7 +11,7 @@ public class CambiarDeEscena : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+         Cursor.lockState = CursorLockMode.None;
     }
 
     // Update is called once per frame
@@ -41,6 +41,7 @@ public class CambiarDeEscena : MonoBehaviour
     }
 
     public void IrATesoros(){
+        Debug.Log("Tesoros");
         SceneManager.LoadScene(2);
     }
 

@@ -31,4 +31,10 @@ public class AnimatorFunctions : MonoBehaviour
             disableOnce = false;
         }
     }
+
+    void OnMouseDown(){
+
+        Debug.Log("click");
+
+    }
 }
