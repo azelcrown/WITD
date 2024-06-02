@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/FINALES NO TOCAR/PLAYMODE.unity
     guid: 0ebb55f9434fa7f4aa0089ca3915fee6
   - enabled: 1
-    path: Assets/Scenes/FINALES NO TOCAR/Inventario.unity
-    guid: 0393eea47b891c8429d8473113bb9155
+    path: Assets/Scenes/FINALES NO TOCAR/INVENTARIO BIEN.unity
+    guid: cb45cb695f964ae45b8990316f9fe6f1
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}

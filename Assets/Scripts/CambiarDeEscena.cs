@@ -17,10 +17,15 @@ public class CambiarDeEscena : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+
+        //CAmbiar de nivel siempre que no estemos en el menú
+        if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().buildIndex != 0)
         {
-            CambiarNivel(indiceNivel);
+            //ir al menu
+            CambiarNivel(0);
         }
+
+
         if (pasarNivel)
         {
             CambiarNivel(indiceNivel);
@@ -30,4 +35,13 @@ public class CambiarDeEscena : MonoBehaviour
     {
         SceneManager.LoadScene(indice);
     }
+
+    public void IrAPlayMode(){
+        SceneManager.LoadScene(1);
+    }
+
+    public void IrATesoros(){
+        SceneManager.LoadScene(2);
+    }
+
 }
